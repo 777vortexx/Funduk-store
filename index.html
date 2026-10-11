@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10251d"><title>Funduk — магазин продуктов</title>
+<style>
+:root{--bg:#f4f7ee;--ink:#17271f;--muted:#68766c;--green:#176b45;--lime:#d8f36a;--dark:#10251d;--line:#dfe7db}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{background:var(--dark);color:white;padding:9px 5%;display:flex;justify-content:space-between;font-size:12px}header{position:sticky;top:0;background:#f4f7eef0;backdrop-filter:blur(12px);z-index:5;border-bottom:1px solid var(--line)}.nav{max-width:1200px;margin:auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:21px;font-weight:900;display:flex;align-items:center;gap:9px}.brand i{font-style:normal;background:var(--lime);padding:8px;border-radius:14px}.btn{border:1px solid var(--line);border-radius:999px;background:white;padding:10px 14px;font-weight:750;color:var(--ink)}.btn.green{background:var(--green);border-color:var(--green);color:white}.hero{max-width:1200px;margin:auto;padding:28px 20px 16px}.hero-box{position:relative;overflow:hidden;border-radius:28px;background:var(--dark);color:white;padding:42px clamp(20px,5vw,60px);min-height:245px;display:flex;align-items:center}.eyebrow{color:var(--lime);font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase}h1{font-size:clamp(36px,6vw,62px);letter-spacing:-2px;line-height:1;margin:13px 0}h1 span{color:var(--lime)}.hero p{color:#d1dfd1;max-width:520px}.orb{position:absolute;right:9%;top:18%;width:190px;height:190px;border-radius:42% 58% 51% 49%;background:linear-gradient(145deg,#e3f77d,#60b875 65%,#27734a);box-shadow:inset -18px -18px 30px #163b2b77,0 20px 45px #0005;display:grid;place-items:center;font-size:85px;animation:float 5s ease-in-out infinite}.orb:after{content:"";position:absolute;inset:13px;border:1px solid #ffffff80;border-radius:inherit;transform:rotate(20deg)}@keyframes float{50%{transform:translateY(-12px) rotate(6deg)}}.search{max-width:1200px;margin:auto;padding:0 20px}.search input{width:100%;border:1px solid var(--line);background:white;border-radius:14px;padding:14px}.wrap{max-width:1200px;margin:auto;padding:0 20px 48px}.head{margin:25px 0 16px}.head h2{margin:0;font-size:clamp(25px,4vw,34px);letter-spacing:-1px}.head p{margin:4px 0;color:var(--muted);font-size:14px}.cats,.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.cat{min-height:165px;text-align:left;padding:18px;border-radius:21px;background:white;border:1px solid var(--line);color:var(--ink);transition:.25s}.cat:hover{transform:translateY(-5px) rotateX(2deg);box-shadow:0 15px 30px #203c2517}.cat.feature{background:var(--lime);border-color:var(--lime)}.cat .emoji{display:block;font-size:38px;margin-bottom:13px;filter:drop-shadow(0 7px 5px #17271f20)}.cat b{display:block;font-size:16px}.cat small{display:block;color:var(--muted);margin-top:5px}.view{display:none}.view.show{display:block}.back{border:0;background:transparent;color:var(--green);font-weight:850;margin:22px 0 4px;padding:4px 0}.product{background:white;border:1px solid var(--line);border-radius:19px;padding:12px;min-width:0;transition:.2s}.product:hover{transform:translateY(-3px);box-shadow:0 12px 25px #203c2514}.photo{height:135px;border-radius:14px;background:linear-gradient(135deg,#edf5e7,#dcebd5);display:grid;place-items:center;font-size:58px;overflow:hidden;position:relative}.photo img{width:100%;height:100%;object-fit:cover}.badge{position:absolute;top:8px;left:8px;background:var(--lime);padding:4px 7px;border-radius:99px;font-size:10px;font-weight:900}.product h3{font-size:15px;margin:11px 0 4px}.product .photo img{object-fit:cover}.desc{font-size:12px;color:var(--muted);min-height:29px;margin:0 0 10px}.weight-control{display:flex;align-items:center;gap:7px;margin:8px 0 10px;font-size:12px;color:var(--muted)}.weight-control input{width:76px;border:1px solid var(--line);border-radius:8px;padding:6px;background:white;color:var(--ink)}.bottom{display:flex;align-items:center;justify-content:space-between;gap:6px}.price{font-weight:900;font-size:17px;white-space:nowrap}.unit{font-size:10px;color:var(--muted);font-weight:500}.add{background:var(--green);border:0;border-radius:10px;color:white;font-weight:850;padding:9px 10px}.add:disabled{opacity:.4}.info{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0}.info div{background:#e7efdd;padding:18px;border-radius:17px}.info b{display:block;margin:7px 0}.info small{color:var(--muted)}footer{background:var(--dark);color:#e3eadf;padding:26px 20px}.foot{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.foot small{color:#a8b8a8}.shade{display:none;position:fixed;inset:0;background:#07150fc4;z-index:20;align-items:center;justify-content:center;padding:12px}.shade.open{display:flex}.modal{background:var(--bg);border-radius:23px;padding:22px;width:min(760px,100%);max-height:92vh;overflow:auto}.mh{display:flex;justify-content:space-between;align-items:center;gap:10px}.mh h2{margin:0}.close{border:0;border-radius:50%;width:38px;height:38px;font-size:23px}.layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:15px}.form{display:grid;gap:10px}.form label{display:grid;gap:5px;font-size:12px;color:var(--muted);font-weight:800}.form input,.form select,.form textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink)}.form textarea{min-height:65px}.line{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.qty{display:flex;align-items:center;gap:7px}.qty button{width:27px;height:27px;border:1px solid var(--line);border-radius:8px;background:white}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}.tabs button{border:1px solid var(--line);background:white;border-radius:99px;padding:8px 12px;font-weight:800}.tabs button.active{background:var(--green);color:white}.panel{display:none}.panel.active{display:block}.adminrow{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid var(--line);border-radius:12px;padding:10px;margin-top:8px}.adminrow small{display:block;color:var(--muted)}.adminrow button{border:1px solid var(--line);background:white;border-radius:8px;padding:6px}.toast{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:40;background:var(--dark);color:white;padding:12px 17px;border-radius:12px;max-width:90%}.toast.show{display:block}.note{color:var(--muted);font-size:12px;line-height:1.5}.empty{background:white;padding:22px;border:1px dashed #b8c9b6;border-radius:14px;color:var(--muted)}
+@media(max-width:850px){.cats,.products{grid-template-columns:repeat(3,minmax(0,1fr))}.orb{right:3%;width:150px;height:150px;font-size:68px}.hero-copy{max-width:75%}}
+@media(max-width:600px){.top{font-size:10px}.nav{padding:10px 13px}.brand{font-size:16px}.brand i{padding:6px}.btn{padding:8px 10px;font-size:12px}.hero{padding:20px 13px 14px}.hero-box{padding:29px 20px;min-height:250px}.hero-copy{max-width:100%}.hero p{max-width:80%;font-size:13px}.orb{width:100px;height:100px;right:-15px;top:68%;font-size:45px;opacity:.7}h1{letter-spacing:-1.5px}.search,.wrap{padding-left:13px;padding-right:13px}.cats,.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.cat{min-height:145px;padding:14px;border-radius:17px}.cat .emoji{font-size:32px}.cat b{font-size:14px}.cat small{font-size:11px}.photo{height:115px;font-size:49px}.product{padding:9px}.product h3{font-size:14px}.price{font-size:15px}.add{padding:8px}.info,.layout{grid-template-columns:1fr}.modal{padding:17px}.head h2{font-size:25px}}
+</style></head><body>
+<div class="top"><span>🥬 Свежие продукты каждый день</span><span id="topAddress">Адрес магазина добавим позже</span></div>
+<header><div class="nav"><div class="brand" onclick="home()" style="cursor:pointer"><i>🧺</i><span id="brand">Funduk</span></div><div><button class="btn" onclick="openAdmin()">⚙️ Управление</button> <button class="btn green" onclick="openCart()">🛒 <span id="count">0</span></button></div></div></header>
+<section class="hero"><div class="hero-box"><div class="hero-copy"><div class="eyebrow">Хорошее рядом</div><h1>Свежесть в каждой<br><span>корзине.</span></h1><p>Фрукты, овощи, ягоды, сухофрукты и напитки. Выбирайте любимое и оформляйте заказ.</p></div><div class="orb">🍊</div></div></section>
+<div class="search" id="searchbar"><input id="search" placeholder="🔎 Найти товар: яблоки, курага, вода..." oninput="searchProducts(this.value)"></div>
+<main class="wrap"><div id="homeview"><div class="head"><h2>Категории товаров</h2><p>Выберите категорию, чтобы открыть каталог.</p></div><div class="cats" id="cats"></div><div class="info"><div>🛍️<b>Самовывоз</b><small>После подтверждения оплаты магазин соберёт ваш заказ.</small></div><div>🍃<b>Выбор на каждый день</b><small>Свежие и упакованные продукты.</small></div><div>📲<b>Заказ через WhatsApp</b><small>Состав и итоговая сумма отправятся продавцу.</small></div></div></div>
+<div class="view" id="catview"><button class="back" onclick="home()">← Все категории</button><div class="head"><h2 id="catTitle">Каталог</h2><p id="catDesc"></p></div><div class="products" id="productGrid"></div></div>
+<div class="view" id="searchview"><button class="back" onclick="home()">← Все категории</button><div class="head"><h2>Результаты поиска</h2><p id="searchInfo"></p></div><div class="products" id="searchGrid"></div></div></main>
+<footer><div class="foot"><div><b id="footBrand">🧺 Funduk</b><br><small>Магазин продуктов и сухофруктов</small></div><div><span id="footAddress">Адрес будет добавлен позже</span><br><small id="footPhone">Контактный телефон добавим позже</small></div><small>© <span id="year"></span></small></div></footer>
+<div class="shade" id="cartModal" onclick="backdrop(event,'cartModal')"><div class="modal"><div class="mh"><h2>🛒 Корзина и оформление заказа</h2><button class="close" onclick="closeModal('cartModal')">×</button></div><div class="layout"><div><h3>Ваши товары</h3><div id="cartLines"></div><h3>Итого: <span id="total"></span></h3></div><div><h3>Данные для заказа</h3><form class="form" id="checkout"><label>Ваше имя<input name="name" required placeholder="Имя"></label><label>Ваш телефон<input name="phone" type="tel" required placeholder="+992..."></label><label>Как получить заказ<select name="delivery"><option>Самовывоз из магазина</option><option>Хочу уточнить доставку через Яндекс Еду или Самокат</option></select></label><label>Комментарий<textarea name="comment" placeholder="Дополнительные пожелания"></textarea></label><button class="btn green" type="submit">Перейти в WhatsApp и заказать</button><p class="note">После нажатия откроется WhatsApp с готовым сообщением: список товаров, количество/вес и общая сумма. Оплату и реквизиты продавец согласует в чате. По умолчанию заказ оформляется на самовывоз; доставку через Яндекс Еду или Самокат нужно отдельно согласовать и проверить доступность в вашем городе.</p></form></div></div></div></div>
+<div class="shade" id="adminModal" onclick="backdrop(event,'adminModal')"><div class="modal"><div class="mh"><h2>⚙️ Панель управления</h2><button class="close" onclick="closeModal('adminModal')">×</button></div><div id="login"><p>Демо-вход. PIN по умолчанию: <b>2468</b>. Перед публикацией нужно заменить на серверную авторизацию.</p><form class="form" id="pinForm"><label>PIN администратора<input id="pin" type="password" required></label><button class="btn green">Войти</button></form></div><div id="admin" style="display:none"><div class="tabs"><button class="active" onclick="tab('products',this)">Товары</button><button onclick="tab('orders',this)">Заказы</button><button onclick="tab('settings',this)">Магазин</button></div>
+<div class="panel active" id="panel-products"><h3 id="formTitle">Добавить товар</h3><form class="form" id="productForm"><input id="pid" type="hidden"><label>Название<input id="pname" required placeholder="Например, Курага"></label><div class="layout"><label>Цена<input id="pprice" type="number" min="0" step=".01" required><small>Для товаров на развес указывайте цену за 1 кг.</small></label><label>Единица<select id="punit"><option>кг</option><option>шт.</option><option>упак.</option><option>л</option><option>бут.</option><option>коробка</option><option>банка</option></select></label></div><label>Категория<select id="pcat"></select></label><label>Описание<textarea id="pdesc"></textarea></label><label><span><input id="pbulk" type="checkbox" style="width:auto"> Товар продаётся на развес (цена за 1 кг)</span></label><label>Фотография с устройства<input id="pfile" type="file" accept="image/*"></label><label>Или ссылка на фото<input id="purl" type="url" placeholder="https://..."></label><label><span><input id="pavail" type="checkbox" checked style="width:auto"> В наличии</span></label><button class="btn green">Сохранить товар</button><button type="button" class="btn" onclick="resetForm()">Очистить форму</button></form><h3>Каталог</h3><div id="adminProducts"></div></div>
+<div class="panel" id="panel-orders"><h3>Заказы на этом устройстве</h3><p class="note">Заказы не синхронизируются между устройствами в этой демоверсии.</p><div id="adminOrders"></div></div>
+<div class="panel" id="panel-settings"><form class="form" id="settingsForm"><label>Название магазина<input id="sname" required></label><label>Адрес магазина<input id="saddress"></label><label>Телефон<input id="sphone"></label><label>Валюта<select id="scurrency"><option value="RUB">рубли</option><option value="TJS">сомони</option><option value="USD">доллары</option></select></label><button class="btn green">Сохранить настройки</button></form></div><button class="btn" onclick="logout()" style="margin-top:15px">Выйти</button></div></div></div><div class="toast" id="toast"></div>
+<script>
+const C=[
+{id:"drinks",name:"Напитки",desc:"Вода, соки, газировка и лимонады",emoji:"🥤",f:1},
+{id:"fruits",name:"Фрукты",desc:"Сезонные и любимые фрукты",emoji:"🍎"},
+{id:"vegetables",name:"Овощи",desc:"Для салатов и блюд",emoji:"🥦"},
+{id:"berries",name:"Ягоды",desc:"Свежие и ароматные",emoji:"🍓"},
+{id:"dried",name:"Сухофрукты",desc:"На развес и в упаковках",emoji:"🍑",f:1},
+{id:"nuts",name:"Орехи и семена",desc:"Полезные перекусы",emoji:"🥜"},
+{id:"boxed",name:"Коробки и наборы",desc:"Подарочные сухофрукты",emoji:"🎁"},
+{id:"packaged",name:"Упакованные товары",desc:"Пакеты, коробки, порции",emoji:"📦"}];
+const PH={
+"Питьевая вода":"https://images.unsplash.com/photo-1560023907-5f339617ea30?auto=format&fit=crop&w=700&q=80",
+"Кола":"https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=700&q=80",
+"Апельсиновый сок":"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=80",
+"Лимонад лимонный":"https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=700&q=80",
+"Газированная вода":"https://images.unsplash.com/photo-1523362628745-0c100150b0a5?auto=format&fit=crop&w=700&q=80",
+"Яблоки":"https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=700&q=80",
+"Бананы":"https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=700&q=80",
+"Апельсины":"https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=700&q=80",
+"Помидоры":"https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=700&q=80",
+"Клубника":"https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=700&q=80",
+"Миндаль":"https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=700&q=80",
+"Курага":"https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?auto=format&fit=crop&w=700&q=80",
+"Подарочная коробка сухофруктов":"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=700&q=80"
+};
+const RAW=[
+/* drinks: 10 */
+["Питьевая вода",45,"бут.","drinks","Вода без газа","💧",false],
+["Газированная вода",55,"бут.","drinks","Освежающая газированная вода","🥤",false],
+["Апельсиновый сок",120,"л","drinks","Сок с цитрусовым вкусом","🧃",false],
+["Яблочный сок",110,"л","drinks","Яблочный сок","🧃",false],
+["Лимонад лимонный",95,"бут.","drinks","Лимонный лимонад","🍋",false],
+["Лимонад тархун",95,"бут.","drinks","Лимонад с тархуном","🍈",false],
+["Холодный чай",100,"бут.","drinks","Холодный чай, разные вкусы","🧋",false],
+["Кола",90,"бут.","drinks","Газированный напиток","🥤",false],
+["Апельсиновая газировка",90,"бут.","drinks","Газировка с апельсиновым вкусом","🍊",false],
+["Морс ягодный",115,"бут.","drinks","Ягодный морс","🫐",false],
+/* fruits: 10, price per kg */
+["Яблоки",140,"кг","fruits","Сочные сезонные яблоки","🍎",true],
+["Бананы",160,"кг","fruits","Спелые бананы","🍌",true],
+["Апельсины",180,"кг","fruits","Сочные цитрусовые","🍊",true],
+["Груши",210,"кг","fruits","Сладкие груши","🍐",true],
+["Мандарины",190,"кг","fruits","Ароматные мандарины","🍊",true],
+["Виноград",260,"кг","fruits","Сладкий виноград","🍇",true],
+["Киви",240,"кг","fruits","Свежие киви","🥝",true],
+["Лимоны",170,"кг","fruits","Кислые лимоны","🍋",true],
+["Персики",290,"кг","fruits","Сезонные персики","🍑",true],
+["Гранаты",250,"кг","fruits","Спелые гранаты","🔴",true],
+/* vegetables: 10 */
+["Огурцы",130,"кг","vegetables","Свежие огурцы","🥒",true],
+["Помидоры",180,"кг","vegetables","Спелые помидоры","🍅",true],
+["Картофель",65,"кг","vegetables","Картофель для домашних блюд","🥔",true],
+["Морковь",70,"кг","vegetables","Свежая морковь","🥕",true],
+["Лук",55,"кг","vegetables","Репчатый лук","🧅",true],
+["Капуста",60,"кг","vegetables","Белокочанная капуста","🥬",true],
+["Болгарский перец",220,"кг","vegetables","Сладкий перец","🫑",true],
+["Брокколи",240,"кг","vegetables","Зелёная брокколи","🥦",true],
+["Чеснок",190,"кг","vegetables","Ароматный чеснок","🧄",true],
+["Баклажаны",170,"кг","vegetables","Свежие баклажаны","🍆",true],
+/* berries: 10 */
+["Клубника",420,"кг","berries","Сладкая клубника","🍓",true],
+["Малина",650,"кг","berries","Нежная малина","🍓",true],
+["Черника",580,"кг","berries","Свежая черника","🫐",true],
+["Голубика",620,"кг","berries","Сочная голубика","🫐",true],
+["Ежевика",590,"кг","berries","Спелая ежевика","🫐",true],
+["Красная смородина",360,"кг","berries","Ягоды красной смородины","🔴",true],
+["Чёрная смородина",390,"кг","berries","Ароматная чёрная смородина","🫐",true],
+["Крыжовник",350,"кг","berries","Сладко-кислый крыжовник","🟢",true],
+["Клюква",400,"кг","berries","Клюква с ярким вкусом","🔴",true],
+["Вишня",440,"кг","berries","Сочная вишня","🍒",true],
+/* dried: 10, price per kg */
+["Курага",850,"кг","dried","Мягкая сладкая курага","🍑",true],
+["Изюм",450,"кг","dried","Изюм для перекуса и выпечки","🍇",true],
+["Финики",600,"кг","dried","Сладкие финики","🌴",true],
+["Чернослив",700,"кг","dried","Чернослив без косточки","🫐",true],
+["Инжир сушёный",900,"кг","dried","Сушёный инжир","🟤",true],
+["Яблоки сушёные",650,"кг","dried","Сушёные яблочные дольки","🍎",true],
+["Груши сушёные",720,"кг","dried","Сушёные груши","🍐",true],
+["Манго сушёное",1250,"кг","dried","Сладкое сушёное манго","🥭",true],
+["Ананас сушёный",1150,"кг","dried","Кусочки сушёного ананаса","🍍",true],
+["Бананы сушёные",780,"кг","dried","Сладкие банановые чипсы","🍌",true],
+/* nuts: 10 */
+["Миндаль",1100,"кг","nuts","Хрустящий миндаль","🥜",true],
+["Грецкий орех",900,"кг","nuts","Очищенные ядра грецкого ореха","🌰",true],
+["Фисташки",1450,"кг","nuts","Фисташки","🥜",true],
+["Кешью",1250,"кг","nuts","Кешью","🥜",true],
+["Фундук",1200,"кг","nuts","Лесной орех","🌰",true],
+["Арахис",380,"кг","nuts","Обжаренный арахис","🥜",true],
+["Семечки подсолнечника",250,"кг","nuts","Семечки подсолнечника","🌻",true],
+["Тыквенные семечки",750,"кг","nuts","Очищенные тыквенные семечки","🎃",true],
+["Кедровые орехи",2300,"кг","nuts","Ядра кедровых орехов","🌰",true],
+["Макадамия",2100,"кг","nuts","Орех макадамия","🥜",true],
+/* boxed: 10 */
+["Подарочная коробка сухофруктов S",650,"коробка","boxed","Небольшой подарочный набор","🎁",false],
+["Подарочная коробка сухофруктов M",950,"коробка","boxed","Средний подарочный набор","🎁",false],
+["Подарочная коробка сухофруктов L",1450,"коробка","boxed","Большой подарочный набор","🎁",false],
+["Набор кураги и изюма",590,"коробка","boxed","Ассорти сухофруктов","📦",false],
+["Набор фиников и инжира",720,"коробка","boxed","Финики и сушёный инжир","📦",false],
+["Ореховый подарочный набор",1200,"коробка","boxed","Ассорти орехов","🎁",false],
+["Фруктово-ореховый микс",850,"коробка","boxed","Смесь сухофруктов и орехов","🥜",false],
+["Набор к чаю",780,"коробка","boxed","Сладкий набор к чаю","🫖",false],
+["Мини-набор сухофруктов",350,"коробка","boxed","Небольшой набор для знакомства","🎁",false],
+["Праздничный набор Funduk",1750,"коробка","boxed","Подарочный набор Funduk","🎁",false],
+/* packaged: 10 */
+["Курага 250 г",260,"упак.","packaged","Упаковка кураги 250 г","📦",false],
+["Изюм 250 г",150,"упак.","packaged","Упаковка изюма 250 г","📦",false],
+["Финики 500 г",320,"упак.","packaged","Упаковка фиников 500 г","📦",false],
+["Чернослив 250 г",220,"упак.","packaged","Упаковка чернослива 250 г","📦",false],
+["Миндаль 200 г",290,"упак.","packaged","Упаковка миндаля 200 г","📦",false],
+["Фундук 200 г",280,"упак.","packaged","Упаковка фундука 200 г","📦",false],
+["Яблочные чипсы 100 г",110,"упак.","packaged","Хрустящие сушёные яблоки","📦",false],
+["Банановые чипсы 150 г",140,"упак.","packaged","Упакованные банановые чипсы","📦",false],
+["Манго сушёное 150 г",240,"упак.","packaged","Упакованное сушёное манго","📦",false],
+["Ассорти сухофруктов 300 г",390,"упак.","packaged","Упаковка ассорти","📦",false]
+];
+const D=RAW.map((x,i)=>({id:"seed"+i,name:x[0],price:x[1],unit:x[2],category:x[3],desc:x[4],emoji:x[5],available:true,bulk:x[6],image:PH[x[0]]||""}));
+function read(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}}function store(k,v){localStorage.setItem(k,JSON.stringify(v))}
+let products=read("funduk_products",D),cart=read("funduk_cart",[]),orders=read("funduk_orders",[]),settings=read("funduk_settings",{name:"Funduk",address:"Адрес магазина добавим позже",phone:"Контактный телефон добавим позже",currency:"RUB"}),authed=false,editImage="";
+const $=id=>document.getElementById(id);
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function money(n){let s=settings.currency==="RUB"?"₽":settings.currency==="USD"?"$":"сом.";return Number(n).toLocaleString("ru-RU",{maximumFractionDigits:2})+" "+s}
+function cname(id){return C.find(c=>c.id===id)?.name||"Другое"}
+function init(){ $("cats").innerHTML=C.map(c=>`<button class="cat ${c.f?"feature":""}" onclick="openCategory('${c.id}')"><span class="emoji">${c.emoji}</span><b>${c.name}</b><small>${c.desc}</small></button>`).join("");$("pcat").innerHTML=C.map(c=>`<option value="${c.id}">${c.name}</option>`).join("");$("year").textContent=new Date().getFullYear();applySettings();badge()}
+function photo(p){return p.image?`<img src="${p.image}" alt="${esc(p.name)}">`:esc(p.emoji||"🛍️")}
+function card(p){return `<article class="product"><div class="photo">${p.available?"":'<span class="badge">Нет в наличии</span>'}${photo(p)}</div><h3>${esc(p.name)}</h3><p class="desc">${esc(p.desc||"")}</p>${p.bulk?`<label class="weight-control">Вес (кг) <input id="weight-${p.id}" type="number" min="0.1" max="100" step="0.1" value="0.5" inputmode="decimal"></label>`:""}<div class="bottom"><div class="price">${money(p.price)}<span class="unit"> / ${esc(p.unit)}</span></div><button class="add" ${p.available?"":"disabled"} onclick="add('${p.id}')">${p.available?"+ В корзину":"Нет"}</button></div></article>`}
+function openCategory(id){let c=C.find(x=>x.id===id);$("homeview").style.display="none";$("searchview").classList.remove("show");$("catview").classList.add("show");$("catTitle").textContent=c.name;$("catDesc").textContent=c.desc;let a=products.filter(p=>p.category===id);$("productGrid").innerHTML=a.length?a.map(card).join(""):'<div class="empty">В этой категории пока нет товаров. Владелец может добавить их через панель управления.</div>';window.scrollTo({top:$("searchbar").offsetTop-90,behavior:"smooth"})}
+function home(){$("homeview").style.display="block";$("catview").classList.remove("show");$("searchview").classList.remove("show");$("search").value="";window.scrollTo({top:0,behavior:"smooth"})}
+function searchProducts(v){let q=v.trim().toLowerCase();if(!q){home();return}$("homeview").style.display="none";$("catview").classList.remove("show");$("searchview").classList.add("show");let a=products.filter(p=>(p.name+" "+p.desc+" "+cname(p.category)).toLowerCase().includes(q));$("searchInfo").textContent="Найдено товаров: "+a.length;$("searchGrid").innerHTML=a.length?a.map(card).join(""):'<div class="empty">Ничего не найдено.</div>'}
+function add(id){let p=products.find(p=>p.id===id);if(!p||!p.available)return;let amount=1;if(p.bulk){amount=Number(($("weight-"+id)||{}).value||0.5);if(!Number.isFinite(amount)||amount<0.1||amount>100){toast("Укажите вес от 0,1 до 100 кг");return}amount=Math.round(amount*10)/10}let x=cart.find(x=>x.id===id);if(x)x.qty=Math.round((x.qty+amount)*10)/10;else cart.push({id,qty:amount});store("funduk_cart",cart);badge();toast(p.bulk?("Добавлено: "+amount.toLocaleString("ru-RU")+" кг"):"Добавлено в корзину")}
+function badge(){$("count").textContent=cart.reduce((s,x)=>s+x.qty,0)}
+function openCart(){renderCart();$("cartModal").classList.add("open")}
+function renderCart(){$("cartLines").innerHTML=cart.length?cart.map(x=>{let p=products.find(p=>p.id===x.id);return p?`<div class="line"><div><b>${esc(p.name)}</b><br><small>${money(p.price)} / ${esc(p.unit)}${p.bulk?" · выбранный вес: "+x.qty.toLocaleString("ru-RU")+" кг":""}</small><br><b>${money(p.price*x.qty)}</b></div><div class="qty"><button onclick="qty('${x.id}',-1)">−</button><b>${x.qty.toLocaleString("ru-RU")}${p.bulk?" кг":""}</b><button onclick="qty('${x.id}',1)">+</button></div></div>`:""}).join(""):'<div class="empty">Корзина пуста.</div>';$("total").textContent=money(cart.reduce((s,x)=>s+(products.find(p=>p.id===x.id)?.price||0)*x.qty,0))}
+function qty(id,n){let x=cart.find(x=>x.id===id);if(!x)return;let p=products.find(p=>p.id===id);x.qty=p?.bulk?Math.round((x.qty+n*0.1)*10)/10:x.qty+n;if(x.qty<=0)cart=cart.filter(x=>x.id!==id);store("funduk_cart",cart);badge();renderCart()}
+$("checkout").addEventListener("submit",e=>{
+e.preventDefault();
+if(!cart.length){toast("Сначала добавьте товары");return}
+let f=Object.fromEntries(new FormData(e.target));
+let items=cart.map(x=>{let p=products.find(p=>p.id===x.id);return p?{name:p.name,price:p.price,qty:x.qty,unit:p.unit,bulk:p.bulk}:null}).filter(Boolean);
+let total=items.reduce((s,x)=>s+x.price*x.qty,0);
+let order={id:Date.now(),date:new Date().toLocaleString("ru-RU"),...f,items,total,status:"Новый"};
+orders.unshift(order);store("funduk_orders",orders);
+let lines=items.map((x,i)=>`${i+1}. ${x.name} — ${x.bulk?x.qty.toLocaleString("ru-RU")+" кг":x.qty+" шт."} × ${money(x.price)} / ${x.unit} = ${money(x.price*x.qty)}`);
+let message=[
+"Здравствуйте! Хочу оформить заказ в магазине Funduk.",
+"Имя: "+f.name,
+"Телефон: "+f.phone,
+"Получение: "+f.delivery,
+"",
+"Заказ:",
+...lines,
+"",
+"ИТОГО: "+money(total),
+f.comment?"Комментарий: "+f.comment:"",
+"",
+"Пожалуйста, подтвердите наличие товаров и отправьте способ оплаты/реквизиты. После оплаты хочу забрать заказ самовывозом, если не согласуем другой вариант."
+].filter(Boolean).join("\n");
+let waUrl="https://wa.me/992875754242?text="+encodeURIComponent(message);
+window.open(waUrl,"_blank","noopener,noreferrer");
+cart=[];store("funduk_cart",cart);badge();closeModal("cartModal");e.target.reset();
+toast("Открываем WhatsApp с вашим заказом");
+});
+function openAdmin(){$("adminModal").classList.add("open");$("login").style.display=authed?"none":"block";$("admin").style.display=authed?"block":"none";if(authed)refreshAdmin()}
+$("pinForm").addEventListener("submit",e=>{e.preventDefault();if($("pin").value==="2468"){authed=true;$("login").style.display="none";$("admin").style.display="block";refreshAdmin();toast("Демо-панель открыта")}else toast("Неверный PIN")});
+function logout(){authed=false;$("login").style.display="block";$("admin").style.display="none";$("pin").value=""}
+function tab(n,b){document.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));$("panel-"+n).classList.add("active");if(n==="products")renderAdminProducts();if(n==="orders")renderOrders();if(n==="settings")fillSettings()}
+function refreshAdmin(){renderAdminProducts();renderOrders();fillSettings()}
+function renderAdminProducts(){$("adminProducts").innerHTML=products.map(p=>`<div class="adminrow"><div><b>${esc(p.name)}</b><small>${cname(p.category)} · ${money(p.price)} / ${esc(p.unit)} · ${p.available?"В наличии":"Нет в наличии"}</small></div><div><button onclick="editProduct('${p.id}')">Изменить</button> <button onclick="delProduct('${p.id}')">Удалить</button></div></div>`).join("")||"Нет товаров"}
+function renderOrders(){$("adminOrders").innerHTML=orders.map(o=>`<div class="adminrow"><div><b>Заказ #${o.id}</b><small>${esc(o.name)} · ${esc(o.phone)} · ${money(o.total)}</small><small>${esc(o.address)} · ${o.date}</small><small>${o.items.map(i=>esc(i.name)+" × "+i.qty).join(", ")}</small></div><button onclick="delOrder(${o.id})">Удалить</button></div>`).join("")||"Заказов нет на этом устройстве"}
+function delOrder(id){orders=orders.filter(o=>o.id!==id);store("funduk_orders",orders);renderOrders()}
+function resetForm(){$("productForm").reset();$("pid").value="";$("formTitle").textContent="Добавить товар";editImage=""}
+function editProduct(id){let p=products.find(x=>x.id===id);if(!p)return;$("pid").value=p.id;$("pname").value=p.name;$("pprice").value=p.price;$("pcat").value=p.category;$("punit").value=p.unit;$("pdesc").value=p.desc||"";$("pbulk").checked=!!p.bulk;$("pavail").checked=p.available;$("purl").value=p.image?.startsWith("http")?p.image:"";editImage=p.image||"";$("formTitle").textContent="Изменить товар";$("panel-products").scrollIntoView({behavior:"smooth"})}
+function delProduct(id){if(!confirm("Удалить товар?"))return;products=products.filter(p=>p.id!==id);cart=cart.filter(p=>p.id!==id);store("funduk_products",products);store("funduk_cart",cart);badge();renderAdminProducts();toast("Товар удалён")}
+$("pfile").addEventListener("change",e=>{let f=e.target.files[0];if(!f)return;if(f.size>800000){toast("Для демо выберите фото до 800 КБ");e.target.value="";return}let r=new FileReader();r.onload=()=>{editImage=r.result;toast("Фото выбрано")};r.readAsDataURL(f)});
+$("productForm").addEventListener("submit",e=>{e.preventDefault();let id=$("pid").value||"p"+Date.now(),old=products.find(p=>p.id===id),url=$("purl").value.trim();let p={id,name:$("pname").value.trim(),price:Number($("pprice").value),category:$("pcat").value,unit:$("punit").value,desc:$("pdesc").value.trim(),image:editImage||url,emoji:old?.emoji||"🛍️",available:$("pavail").checked,bulk:$("pbulk").checked};if(old)products=products.map(x=>x.id===id?p:x);else products.unshift(p);store("funduk_products",products);resetForm();renderAdminProducts();toast(old?"Товар обновлён":"Товар добавлен");});
+function fillSettings(){$("sname").value=settings.name;$("saddress").value=settings.address;$("sphone").value=settings.phone;$("scurrency").value=settings.currency}
+$("settingsForm").addEventListener("submit",e=>{e.preventDefault();settings={name:$("sname").value.trim(),address:$("saddress").value.trim()||"Адрес магазина добавим позже",phone:$("sphone").value.trim()||"Контактный телефон добавим позже",currency:$("scurrency").value};store("funduk_settings",settings);applySettings();toast("Настройки сохранены")});
+function applySettings(){document.title=settings.name+" — магазин продуктов";$("brand").textContent=settings.name;$("footBrand").textContent="🧺 "+settings.name;$("topAddress").textContent=settings.address;$("footAddress").textContent=settings.address;$("footPhone").textContent=settings.phone}
+function closeModal(id){$(id).classList.remove("open")}function backdrop(e,id){if(e.target.id===id)closeModal(id)}function toast(s){$("toast").textContent=s;$("toast").classList.add("show");clearTimeout(window.tt);window.tt=setTimeout(()=>$("toast").classList.remove("show"),3200)}
+init();
+</script></body></html>
